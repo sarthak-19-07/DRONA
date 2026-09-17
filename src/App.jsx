@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Agriculture from "./Agriculture";
 import Industry from "./Industry";
@@ -6,25 +6,39 @@ import Photography from "./Photography";
 import About from "./About";
 
 function App() {
-
   const [menuOpen, setMenuOpen] = useState(false);
+  const [route, setRoute] = useState(window.location.hash);
 
   const closeMenu = () => setMenuOpen(false);
 
-if (window.location.pathname === "/agriculture") {
-  return <Agriculture />;
-}
+  useEffect(() => {
+    const handleHashChange = () => {
+      setRoute(window.location.hash);
+      window.scrollTo(0, 0);
+    };
 
-if (window.location.pathname === "/industry") {
-  return <Industry />;
-}
+    window.addEventListener("hashchange", handleHashChange);
 
-if (window.location.pathname === "/photography") {
-  return <Photography />;
-}
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
 
-if (window.location.pathname === "/about") {
-  return <About />;
+  if (route === "#/agriculture") {
+    return <Agriculture />;
+  }
+
+  if (route === "#/industry") {
+    return <Industry />;
+  }
+
+  if (route === "#/photography") {
+    return <Photography />;
+  }
+
+  if (route === "#/about") {
+    return <About />;
+  }
 }
   return (
     <div className="app">
@@ -257,8 +271,7 @@ src="/images/drone%20logo.png"              alt="DRONA"
                 technology useful for real-world problems.
               </p>
 
-             <a href="/about" className="text-link">
-  Discover DRONA →
+<a href="#/about" className="text-link">  Discover DRONA →
 </a>
 
             </div>
