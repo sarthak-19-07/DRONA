@@ -6,21 +6,6 @@ import Photography from "./Photography";
 import About from "./About";
 
 function App() {
-const [currentPage, setCurrentPage] = useState(
-  window.location.hash
-);
-
-useEffect(() => {
-  const handleHashChange = () => {
-    setCurrentPage(window.location.hash);
-  };
-
-  window.addEventListener("hashchange", handleHashChange);
-
-  return () => {
-    window.removeEventListener("hashchange", handleHashChange);
-  };
-}, []);
   const [menuOpen, setMenuOpen] = useState(false);
   const [route, setRoute] = useState(window.location.hash);
 
@@ -54,7 +39,7 @@ useEffect(() => {
   if (route === "#/about") {
     return <About />;
   }
-}
+
   return (
     <div className="app">
 
@@ -808,23 +793,24 @@ window.location.hash = "/photography";  }}
 
   <div className="contact-item">
     <span>EMAIL</span>
+
     <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=dronatech.team@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  dronatech.team@gmail.com
-</a>
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=dronatech.team@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      dronatech.team@gmail.com
+    </a>
   </div>
 
   <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=dronatech.team@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="contact-btn"
->
-  START A CONVERSATION →
-</a>
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=dronatech.team@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="contact-btn"
+  >
+    START A CONVERSATION →
+  </a>
 
 </div>
           
