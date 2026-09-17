@@ -49,7 +49,8 @@ function App() {
 
           <a href="#home" className="logo-link" onClick={closeMenu}>
             <img
-src={`${import.meta.env.BASE_URL}images/drone logo.png`}             alt="DRONA"
+src={`${import.meta.env.BASE_URL}images/drone logo.png`}
+              alt="DRONA"
               className="logo"
             />
           </a>
@@ -65,7 +66,8 @@ src={`${import.meta.env.BASE_URL}images/drone logo.png`}             alt="DRONA"
 
           <nav className={menuOpen ? "nav-links open" : "nav-links"}>
             <a href="#home" onClick={closeMenu}>Home</a>
-<a href="#/about" onClick={closeMenu}>About</a>            <a href="#products" onClick={closeMenu}>Products</a>
+<a href="#/about" onClick={closeMenu}>About</a>            
+            <a href="#products" onClick={closeMenu}>Products</a>
             <a href="#solutions" onClick={closeMenu}>Solutions</a>
             <a href="#technology" onClick={closeMenu}>Technology</a>
             <a href="#contact" className="nav-contact" onClick={closeMenu}>
