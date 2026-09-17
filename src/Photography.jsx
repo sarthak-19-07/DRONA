@@ -1,6 +1,8 @@
 import React from "react";
 import "./Photography.css";
 
+const BASE = import.meta.env.BASE_URL;
+
 function Photography() {
   return (
     <div className="photo-page">
@@ -12,23 +14,36 @@ function Photography() {
       <nav className="photo-navbar">
         <div className="photo-nav-container">
 
-          <a href="/" className="photo-logo-link">
+          <a href={BASE} className="photo-logo-link">
             <img
-              src="/images/drone%20logo.png"
+              src={`${BASE}images/drone%20logo.png`}
               alt="DRONA"
               className="photo-logo"
             />
           </a>
 
           <div className="photo-nav-links">
-            <a href="/">Home</a>
-            <a href="/agriculture">Agriculture</a>
-            <a href="/industry">Industry</a>
-            <a href="/photography" className="active">
+
+            <a href={BASE}>Home</a>
+
+            <a href={`${BASE}#/agriculture`}>
+              Agriculture
+            </a>
+
+            <a href={`${BASE}#/industry`}>
+              Industry
+            </a>
+
+            <a
+              href={`${BASE}#/photography`}
+              className="active"
+            >
               Photography
             </a>
+
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
+
           </div>
 
           <a href="#contact" className="photo-nav-button">
@@ -46,7 +61,7 @@ function Photography() {
       <section className="photo-hero">
 
         <img
-          src="/images/photo%20drone2.png"
+          src={`${BASE}images/photo%20drone2.png`}
           alt="DRONA aerial photography"
           className="photo-hero-image"
         />
@@ -54,7 +69,6 @@ function Photography() {
         <div className="photo-hero-overlay"></div>
 
         <div className="photo-hero-grid"></div>
-
 
         <div className="photo-hero-content">
 
@@ -78,17 +92,11 @@ function Photography() {
 
           <div className="photo-hero-buttons">
 
-            <a
-              href="#services"
-              className="photo-primary-btn"
-            >
+            <a href="#services" className="photo-primary-btn">
               EXPLORE SERVICES
             </a>
 
-            <a
-              href="#contact"
-              className="photo-secondary-btn"
-            >
+            <a href="#contact" className="photo-secondary-btn">
               BOOK A SHOOT
             </a>
 
@@ -168,10 +176,7 @@ function Photography() {
           SERVICES
           ========================= */}
 
-      <section
-        className="photo-services"
-        id="services"
-      >
+      <section className="photo-services" id="services">
 
         <div className="photo-section-heading">
 
@@ -192,9 +197,6 @@ function Photography() {
 
 
         <div className="photo-service-grid">
-
-
-          {/* SERVICE 01 */}
 
           <div className="photo-service-card">
 
@@ -227,8 +229,6 @@ function Photography() {
           </div>
 
 
-          {/* SERVICE 02 */}
-
           <div className="photo-service-card">
 
             <div className="photo-service-number">
@@ -260,8 +260,6 @@ function Photography() {
           </div>
 
 
-          {/* SERVICE 03 */}
-
           <div className="photo-service-card">
 
             <div className="photo-service-number">
@@ -292,8 +290,6 @@ function Photography() {
 
           </div>
 
-
-          {/* SERVICE 04 */}
 
           <div className="photo-service-card">
 
@@ -334,10 +330,7 @@ function Photography() {
           CREATIVE PROCESS
           ========================= */}
 
-      <section
-        className="photo-process"
-        id="process"
-      >
+      <section className="photo-process" id="process">
 
         <div className="photo-section-label">
           PHOTOGRAPHY / 03
@@ -363,7 +356,6 @@ function Photography() {
         <div className="photo-process-list">
 
           <div className="photo-process-item">
-
             <span>01</span>
 
             <div>
@@ -376,12 +368,10 @@ function Photography() {
             </div>
 
             <b>→</b>
-
           </div>
 
 
           <div className="photo-process-item">
-
             <span>02</span>
 
             <div>
@@ -394,12 +384,10 @@ function Photography() {
             </div>
 
             <b>→</b>
-
           </div>
 
 
           <div className="photo-process-item">
-
             <span>03</span>
 
             <div>
@@ -412,12 +400,10 @@ function Photography() {
             </div>
 
             <b>→</b>
-
           </div>
 
 
           <div className="photo-process-item">
-
             <span>04</span>
 
             <div>
@@ -430,191 +416,176 @@ function Photography() {
             </div>
 
             <b>→</b>
-
           </div>
 
         </div>
 
       </section>
 
-{/* =========================
-    TECHNICAL SPECIFICATIONS
-    ========================= */}
 
-<section className="vision-specs">
+      {/* =========================
+          TECHNICAL SPECIFICATIONS
+          ========================= */}
 
-  <div className="vision-specs-header">
+      <section className="vision-specs">
 
-    <div className="vision-section-label">
-      PHOTOGRAPHY / 05
-    </div>
+        <div className="vision-specs-header">
 
-    <div className="vision-specs-heading">
+          <div className="vision-section-label">
+            PHOTOGRAPHY / 05
+          </div>
 
-      <h2>
-        DRONA <span>VISION</span>
-      </h2>
+          <div className="vision-specs-heading">
 
-      <p>
-        A lightweight and modular aerial imaging platform designed
-        for photography, videography, surveying and visual
-        documentation.
-      </p>
+            <h2>
+              DRONA <span>VISION</span>
+            </h2>
 
-    </div>
+            <p>
+              A lightweight and modular aerial imaging platform designed
+              for photography, videography, surveying and visual
+              documentation.
+            </p>
 
-  </div>
+          </div>
 
-
-  {/* SPECIFICATION GRID */}
-
-  <div className="vision-specs-grid">
-
-    <div className="vision-spec-item">
-      <span>MODEL</span>
-      <strong>VN-01</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>GROSS WEIGHT</span>
-      <strong>~2.2 KG</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>PAYLOAD CAPACITY</span>
-      <strong>~0.6 KG</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>DIMENSIONS</span>
-      <strong>~500 × 500 × 250 MM</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>MAX SPEED</span>
-      <strong>~40 KM/H</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>CLIMB RATE</span>
-      <strong>~3 M/S</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>TARGET ENDURANCE</span>
-      <strong>20–25 MIN</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>TARGET RANGE</span>
-      <strong>~1.5 KM</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>OPERATING ALTITUDE</span>
-      <strong>UP TO 100 M AGL*</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>STRUCTURE</span>
-      <strong>LIGHTWEIGHT / MODULAR</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>CONFIGURATION</span>
-      <strong>MULTIROTOR</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>NAVIGATION</span>
-      <strong>GPS-ASSISTED</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>FLIGHT MODES</span>
-      <strong>MANUAL / ASSISTED</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>PRIMARY CAMERA</span>
-      <strong>RGB AERIAL CAMERA</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>CAMERA MOUNT</span>
-      <strong>STABILIZED / GIMBAL</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>VIDEO CAPTURE</span>
-      <strong>SUPPORTED*</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>LIVE VIDEO</span>
-      <strong>SUPPORTED*</strong>
-    </div>
-
-    <div className="vision-spec-item">
-      <span>BATTERY</span>
-      <strong>REMOVABLE LI-PO</strong>
-    </div>
-
-  </div>
+        </div>
 
 
-  {/* DISCLAIMER */}
+        <div className="vision-specs-grid">
 
-  <div className="vision-spec-note">
+          <div className="vision-spec-item">
+            <span>MODEL</span>
+            <strong>VN-01</strong>
+          </div>
 
-    <span>*</span>
+          <div className="vision-spec-item">
+            <span>GROSS WEIGHT</span>
+            <strong>~2.2 KG</strong>
+          </div>
 
-    <p>
-      Specifications shown are preliminary design targets and
-      may vary depending on final configuration, payload and
-      component selection. Features marked with * are planned
-      system capabilities and subject to final implementation.
-    </p>
+          <div className="vision-spec-item">
+            <span>PAYLOAD CAPACITY</span>
+            <strong>~0.6 KG</strong>
+          </div>
 
-  </div>
+          <div className="vision-spec-item">
+            <span>DIMENSIONS</span>
+            <strong>~500 × 500 × 250 MM</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>MAX SPEED</span>
+            <strong>~40 KM/H</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>CLIMB RATE</span>
+            <strong>~3 M/S</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>TARGET ENDURANCE</span>
+            <strong>20–25 MIN</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>TARGET RANGE</span>
+            <strong>~1.5 KM</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>OPERATING ALTITUDE</span>
+            <strong>UP TO 100 M AGL*</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>STRUCTURE</span>
+            <strong>LIGHTWEIGHT / MODULAR</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>CONFIGURATION</span>
+            <strong>MULTIROTOR</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>NAVIGATION</span>
+            <strong>GPS-ASSISTED</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>FLIGHT MODES</span>
+            <strong>MANUAL / ASSISTED</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>PRIMARY CAMERA</span>
+            <strong>RGB AERIAL CAMERA</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>CAMERA MOUNT</span>
+            <strong>STABILIZED / GIMBAL</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>VIDEO CAPTURE</span>
+            <strong>SUPPORTED*</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>LIVE VIDEO</span>
+            <strong>SUPPORTED*</strong>
+          </div>
+
+          <div className="vision-spec-item">
+            <span>BATTERY</span>
+            <strong>REMOVABLE LI-PO</strong>
+          </div>
+
+        </div>
 
 
-  {/* ESTIMATED PROTOTYPE COST */}
+        <div className="vision-spec-note">
 
-  <div className="vision-cost">
+          <span>*</span>
 
-    <div className="vision-cost-item">
+          <p>
+            Specifications shown are preliminary design targets and
+            may vary depending on final configuration, payload and
+            component selection. Features marked with * are planned
+            system capabilities and subject to final implementation.
+          </p>
 
-      <span>ESTIMATED PROTOTYPE COST</span>
-
-      <strong>₹10,000</strong>
-
-    </div>
-
-
-    <div className="vision-cost-item">
-
-      <span>PLATFORM</span>
-
-      <strong>DRONA VISION</strong>
-
-    </div>
+        </div>
 
 
-    <div className="vision-cost-note">
+        <div className="vision-cost">
 
-      <span>NOTE</span>
+          <div className="vision-cost-item">
+            <span>ESTIMATED PROTOTYPE COST</span>
+            <strong>₹10,000</strong>
+          </div>
 
-      <p>
-        Final cost may vary depending on components,
-        payload and configuration.
-      </p>
+          <div className="vision-cost-item">
+            <span>PLATFORM</span>
+            <strong>DRONA VISION</strong>
+          </div>
 
-    </div>
+          <div className="vision-cost-note">
+            <span>NOTE</span>
 
-  </div>
+            <p>
+              Final cost may vary depending on components,
+              payload and configuration.
+            </p>
+          </div>
 
-</section>
+        </div>
+
+      </section>
+
 
       {/* =========================
           APPLICATIONS
@@ -625,7 +596,7 @@ function Photography() {
         <div className="photo-applications-image">
 
           <img
-            src="/images/photo%20drone2.png"
+            src={`${BASE}images/photo%20drone2.png`}
             alt="Aerial photography drone"
           />
 
@@ -770,10 +741,7 @@ function Photography() {
           CTA
           ========================= */}
 
-      <section
-        className="photo-cta"
-        id="contact"
-      >
+      <section className="photo-cta" id="contact">
 
         <div className="photo-cta-label">
           DRONA // AERIAL PHOTOGRAPHY
@@ -791,7 +759,9 @@ function Photography() {
         </p>
 
         <a
-          href="mailto:hello@drona.in"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=dronatech.team@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className="photo-cta-button"
         >
           BOOK A SHOOT →
@@ -809,7 +779,7 @@ function Photography() {
         <div className="photo-footer-top">
 
           <img
-            src="/images/drone%20logo.png"
+            src={`${BASE}images/drone%20logo.png`}
             alt="DRONA"
             className="photo-footer-logo"
           />
@@ -828,7 +798,7 @@ function Photography() {
           </span>
 
           <div>
-            <a href="/">HOME</a>
+            <a href={BASE}>HOME</a>
             <a href="#services">SERVICES</a>
             <a href="#contact">CONTACT</a>
           </div>
