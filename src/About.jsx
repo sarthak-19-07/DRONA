@@ -306,14 +306,14 @@ function About() {
                 </span>
 
                 <p>
-                  Technology & Product Development
+                   Product Development & Marketing
                 </p>
 
                 <div className="founder-divider"></div>
 
                 <small>
-                  Flight Control • Software • AI/ML •
-                  R&D • Product Testing • Marketing
+                  Flight Control • Product Testing • Marketing 
+                  • Operations • Procurement • Customer Support
                 </small>
 
               </div>
@@ -350,14 +350,15 @@ function About() {
                 </span>
 
                 <p>
-                  Operations, Marketing & Customer Experience
+                  Design, Technology & Finance
                 </p>
 
                 <div className="founder-divider"></div>
 
                 <small>
-                  Drone Design • Operations • Procurement •
-                  Customer Support • Technology Development
+                  Drone Design  • Software • AI/ML •
+                  R&D • Technology Development • Financial
+                  Planning
                 </small>
 
               </div>
