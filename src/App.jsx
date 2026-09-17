@@ -49,7 +49,7 @@ function App() {
 
           <a href="#home" className="logo-link" onClick={closeMenu}>
             <img
-src="/images/drone%20logo.png"              alt="DRONA"
+src={`${import.meta.env.BASE_URL}images/drone logo.png`}             alt="DRONA"
               className="logo"
             />
           </a>
@@ -153,7 +153,7 @@ src="/images/drone%20logo.png"              alt="DRONA"
   <div className="hero-drone-wrap">
 
     <img
-      src="/images/website%20background.png"
+src={`${import.meta.env.BASE_URL}images/website background.png`}
       alt="DRONA 3D Drone"
       className="hero-drone-3d"
     />
@@ -316,7 +316,7 @@ window.location.hash = "/agriculture";  }}
   <div className="product-image">
 
     <img
-      src="/images/agri%20drone.jpg"
+     src={`${import.meta.env.BASE_URL}images/agri drone.jpg`} 
       alt="DRONA Agriculture Drone"
     />
 
@@ -360,7 +360,7 @@ window.location.hash = "/industry";  }}
 >
               <div className="product-image">
                 <img
-                  src="/images/inspection%20drone.jpg"
+                 src={`${import.meta.env.BASE_URL}images/inspection drone.jpg`}
                   alt="DRONA Inspection Drone"
                 />
 
@@ -404,7 +404,7 @@ window.location.hash = "/photography";  }}
 >
               <div className="product-image">
                 <img
-                  src="/images/photo%20drone.jpg"
+                  src={`${import.meta.env.BASE_URL}images/photo drone.jpg`}
                   alt="DRONA Photography Drone"
                 />
 
@@ -626,7 +626,7 @@ window.location.hash = "/photography";  }}
       <div className="why-drone-glow"></div>
 
       <img
-        src="/images/3d%20printed%20drone.png"
+       src={`${import.meta.env.BASE_URL}images/3d printed drone.png`}
         alt="DRONA 3D Printed Drone"
       />
 
