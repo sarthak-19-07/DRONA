@@ -2,6 +2,13 @@ import React from "react";
 import "./Agriculture.css";
 
 function Agriculture() {
+
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="agri-page">
 
@@ -12,23 +19,60 @@ function Agriculture() {
       <nav className="agri-navbar">
         <div className="agri-nav-container">
 
-          <a href="/" className="agri-logo-link">
+          <a href="#/" className="agri-logo-link">
             <img
-              src="/images/drone%20logo.png"
+              src={`${import.meta.env.BASE_URL}images/drone%20logo.png`}
               alt="DRONA"
               className="agri-logo"
             />
           </a>
 
           <div className="agri-nav-links">
-            <a href="/">Home</a>
-            <a href="/agriculture" className="active">Agriculture</a>
-            <a href="#services">Services</a>
-            <a href="#process">How It Works</a>
-            <a href="#contact">Contact</a>
+            <a href="#/">Home</a>
+
+            <a href="#/agriculture" className="active">
+              Agriculture
+            </a>
+
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("services");
+              }}
+            >
+              Services
+            </a>
+
+            <a
+              href="#process"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("process");
+              }}
+            >
+              How It Works
+            </a>
+
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("contact");
+              }}
+            >
+              Contact
+            </a>
           </div>
 
-          <a href="#contact" className="agri-nav-button">
+          <a
+            href="#contact"
+            className="agri-nav-button"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("contact");
+            }}
+          >
             GET IN TOUCH
           </a>
 
@@ -43,7 +87,7 @@ function Agriculture() {
       <section className="agri-hero">
 
         <img
-          src="/images/agri%20drone%202.png"
+          src={`${import.meta.env.BASE_URL}images/agri%20drone%202.png`}
           alt="Agricultural drone spraying crops"
           className="agri-hero-image"
         />
@@ -70,18 +114,35 @@ function Agriculture() {
           </p>
 
           <div className="agri-hero-buttons">
-            <a href="#services" className="agri-primary-btn">
+
+            <a
+              href="#services"
+              className="agri-primary-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("services");
+              }}
+            >
               EXPLORE SERVICES
             </a>
 
-            <a href="#contact" className="agri-secondary-btn">
+            <a
+              href="#contact"
+              className="agri-secondary-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("contact");
+              }}
+            >
               CONTACT DRONA
             </a>
+
           </div>
 
         </div>
 
         <div className="agri-hero-info">
+
           <div>
             <strong>01</strong>
             <span>PRECISION</span>
@@ -96,6 +157,7 @@ function Agriculture() {
             <strong>03</strong>
             <span>SMART FARMING</span>
           </div>
+
         </div>
 
         <div className="agri-scroll">
@@ -172,8 +234,6 @@ function Agriculture() {
 
         <div className="agri-service-grid">
 
-          {/* Service 01 */}
-
           <div className="agri-service-card">
 
             <div className="agri-service-number">01</div>
@@ -198,8 +258,6 @@ function Agriculture() {
 
           </div>
 
-
-          {/* Service 02 */}
 
           <div className="agri-service-card">
 
@@ -226,8 +284,6 @@ function Agriculture() {
           </div>
 
 
-          {/* Service 03 */}
-
           <div className="agri-service-card">
 
             <div className="agri-service-number">03</div>
@@ -252,8 +308,6 @@ function Agriculture() {
 
           </div>
 
-
-          {/* Service 04 */}
 
           <div className="agri-service-card">
 
@@ -372,6 +426,7 @@ function Agriculture() {
 
       </section>
 
+
       {/* =========================
           TECHNICAL SPECIFICATIONS
           ========================= */}
@@ -399,8 +454,6 @@ function Agriculture() {
 
         </div>
 
-
-        {/* SPECIFICATIONS */}
 
         <div className="agri-specs-grid">
 
@@ -467,8 +520,6 @@ function Agriculture() {
         </div>
 
 
-        {/* DISCLAIMER */}
-
         <div className="agri-spec-note">
 
           <span>*</span>
@@ -481,45 +532,46 @@ function Agriculture() {
 
         </div>
 
-{/* =========================
-    ESTIMATED PROTOTYPE COST
-    ========================= */}
 
-<div className="agri-cost">
+        {/* =========================
+            ESTIMATED PROTOTYPE COST
+            ========================= */}
 
-  <div className="agri-cost-item">
+        <div className="agri-cost">
 
-    <span>ESTIMATED PROTOTYPE COST</span>
+          <div className="agri-cost-item">
 
-    <strong>₹8,000</strong>
+            <span>ESTIMATED PROTOTYPE COST</span>
 
-  </div>
+            <strong>₹8,000</strong>
 
-
-  <div className="agri-cost-item">
-
-    <span>PLATFORM</span>
-
-    <strong>DRONA AGRITECH</strong>
-
-  </div>
+          </div>
 
 
-  <div className="agri-cost-note">
+          <div className="agri-cost-item">
 
-    <span>NOTE</span>
+            <span>PLATFORM</span>
 
-    <p>
-      Final cost may vary depending on components,
-      payload and configuration.
-    </p>
+            <strong>DRONA AGRITECH</strong>
 
-  </div>
+          </div>
 
-</div>
-        
+
+          <div className="agri-cost-note">
+
+            <span>NOTE</span>
+
+            <p>
+              Final cost may vary depending on components,
+              payload and configuration.
+            </p>
+
+          </div>
+
+        </div>
+
       </section>
-      
+
 
       {/* =========================
           CTA
@@ -541,7 +593,7 @@ function Agriculture() {
           Ready to bring smarter aerial technology to your fields?
         </p>
 
-        <a href="/" className="agri-cta-button">
+        <a href="#/" className="agri-cta-button">
           TALK TO DRONA
         </a>
 
@@ -557,7 +609,7 @@ function Agriculture() {
         <div className="agri-footer-top">
 
           <img
-            src="/images/drone%20logo.png"
+            src={`${import.meta.env.BASE_URL}images/drone%20logo.png`}
             alt="DRONA"
             className="agri-footer-logo"
           />
@@ -575,9 +627,27 @@ function Agriculture() {
           </span>
 
           <div>
-            <a href="/">HOME</a>
-            <a href="#services">SERVICES</a>
-            <a href="#contact">CONTACT</a>
+            <a href="#/">HOME</a>
+
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("services");
+              }}
+            >
+              SERVICES
+            </a>
+
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("contact");
+              }}
+            >
+              CONTACT
+            </a>
           </div>
 
         </div>
