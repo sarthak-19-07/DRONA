@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Agriculture from "./Agriculture";
 import Industry from "./Industry";
@@ -6,6 +6,21 @@ import Photography from "./Photography";
 import About from "./About";
 
 function App() {
+const [currentPage, setCurrentPage] = useState(
+  window.location.hash
+);
+
+useEffect(() => {
+  const handleHashChange = () => {
+    setCurrentPage(window.location.hash);
+  };
+
+  window.addEventListener("hashchange", handleHashChange);
+
+  return () => {
+    window.removeEventListener("hashchange", handleHashChange);
+  };
+}, []);
   const [menuOpen, setMenuOpen] = useState(false);
   const [route, setRoute] = useState(window.location.hash);
 
@@ -310,8 +325,7 @@ src="/images/drone%20logo.png"              alt="DRONA"
 <article
   className="product-card"
   onClick={() => {
-    window.location.assign("/agriculture");
-  }}
+window.location.hash = "/agriculture";  }}
   style={{ cursor: "pointer" }}
 >
   <div className="product-image">
@@ -356,8 +370,7 @@ src="/images/drone%20logo.png"              alt="DRONA"
 <article
   className="product-card"
   onClick={() => {
-    window.location.assign("/industry");
-  }}
+window.location.hash = "/industry";  }}
   style={{ cursor: "pointer" }}
 >
               <div className="product-image">
@@ -401,8 +414,7 @@ src="/images/drone%20logo.png"              alt="DRONA"
 <article
   className="product-card"
   onClick={() => {
-    window.location.assign("/photography");
-  }}
+window.location.hash = "/photography";  }}
   style={{ cursor: "pointer" }}
 >
               <div className="product-image">
