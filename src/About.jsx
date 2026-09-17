@@ -447,7 +447,7 @@ function About() {
         <div className="about-footer-top">
 
           <img
-            src="/images/drone%20logo.png"
+            src="#/images/drone%20logo.png"
             alt="DRONA"
             className="about-footer-logo"
           />
