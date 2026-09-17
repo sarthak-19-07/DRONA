@@ -1,0 +1,1667 @@
+/* =========================================================
+   DRONA — INDUSTRIAL INSPECTION PAGE
+   ========================================================= */
+
+.industry-page {
+  width: 100%;
+  background: #050505;
+  color: #fff;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.industry-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  z-index: 1000;
+
+  background: rgba(5,5,5,0.78);
+
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.industry-nav-container {
+  max-width: 1400px;
+  height: 82px;
+
+  margin: auto;
+  padding: 0 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.industry-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.industry-logo {
+  width: 125px;
+  height: auto;
+  display: block;
+}
+
+.industry-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.industry-nav-links a {
+  color: #bdbdbd;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.industry-nav-links a:hover,
+.industry-nav-links a.active {
+  color: #ff5a00;
+}
+
+.industry-nav-button {
+  padding: 12px 20px;
+
+  border: 1px solid #ff5a00;
+
+  color: #fff;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  transition: 0.3s ease;
+}
+
+.industry-nav-button:hover {
+  background: #ff5a00;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.industry-hero {
+  min-height: 100vh;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background: #050505;
+}
+
+.industry-hero-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  z-index: 1;
+}
+
+.industry-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.90) 0%,
+      rgba(0,0,0,0.70) 35%,
+      rgba(0,0,0,0.22) 75%,
+      rgba(0,0,0,0.15) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,0.55),
+      transparent 50%
+    );
+}
+
+.industry-hero-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image: linear-gradient(
+    to right,
+    black,
+    transparent 75%
+  );
+}
+
+.industry-hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 55%;
+  max-width: 720px;
+
+  margin-left: 7vw;
+
+  padding-top: 50px;
+}
+
+.industry-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #ff5a00;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 25px;
+}
+
+.industry-eyebrow span {
+  width: 35px;
+  height: 1px;
+
+  background: #ff5a00;
+}
+
+.industry-hero h1 {
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: clamp(75px, 9vw, 135px);
+
+  font-weight: 500;
+
+  line-height: 0.82;
+
+  letter-spacing: -2px;
+}
+
+.industry-hero h1 strong {
+  color: #ff5a00;
+  font-weight: 600;
+}
+
+.industry-hero-content > p {
+  max-width: 520px;
+
+  margin-top: 30px;
+
+  color: rgba(255,255,255,0.75);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.industry-hero-buttons {
+  display: flex;
+
+  gap: 14px;
+
+  margin-top: 35px;
+}
+
+.industry-primary-btn,
+.industry-secondary-btn {
+  min-height: 48px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 24px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  transition: 0.3s ease;
+}
+
+.industry-primary-btn {
+  background: #ff5a00;
+  color: #fff;
+}
+
+.industry-primary-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.industry-secondary-btn {
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff;
+}
+
+.industry-secondary-btn:hover {
+  border-color: #ff5a00;
+  color: #ff5a00;
+}
+
+.industry-hero-info {
+  position: absolute;
+
+  right: 7vw;
+  bottom: 65px;
+
+  z-index: 5;
+
+  display: flex;
+
+  gap: 30px;
+}
+
+.industry-hero-info div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.industry-hero-info strong {
+  color: #ff5a00;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 20px;
+}
+
+.industry-hero-info span {
+  color: rgba(255,255,255,0.6);
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+}
+
+.industry-scroll {
+  position: absolute;
+
+  left: 7vw;
+  bottom: 35px;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: rgba(255,255,255,0.5);
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+.industry-scroll span {
+  width: 35px;
+  height: 1px;
+
+  background: #ff5a00;
+}
+
+
+/* =========================================================
+   COMMON
+   ========================================================= */
+
+.industry-section-label {
+  color: #ff5a00;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.industry-intro {
+  padding: 130px 7%;
+
+  background: #080808;
+}
+
+.industry-intro-grid {
+  margin-top: 70px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+}
+
+.industry-intro h2 {
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: clamp(65px, 7vw, 110px);
+
+  line-height: 0.82;
+
+  font-weight: 500;
+}
+
+.industry-intro h2 span {
+  color: #ff5a00;
+}
+
+.industry-intro-text {
+  max-width: 520px;
+}
+
+.industry-large-text {
+  color: #fff !important;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 34px !important;
+
+  line-height: 1.05 !important;
+}
+
+.industry-intro-text p {
+  color: #888;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.industry-services {
+  padding: 130px 7%;
+
+  background: #050505;
+}
+
+.industry-section-heading {
+  max-width: 800px;
+}
+
+.industry-section-heading h2 {
+  margin-top: 25px;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: clamp(60px, 7vw, 105px);
+
+  line-height: 0.85;
+
+  font-weight: 500;
+}
+
+.industry-section-heading h2 span {
+  color: #ff5a00;
+}
+
+.industry-section-heading p {
+  max-width: 520px;
+
+  margin-top: 25px;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.industry-service-grid {
+  margin-top: 70px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.industry-service-card {
+  position: relative;
+
+  min-height: 330px;
+
+  padding: 35px;
+
+  background: #080808;
+
+  border-right: 1px solid rgba(255,255,255,0.1);
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  transition: 0.4s ease;
+}
+
+.industry-service-card:hover {
+  background: #0e0e0e;
+
+  transform: translateY(-5px);
+}
+
+.industry-service-number {
+  position: absolute;
+
+  top: 25px;
+  right: 30px;
+
+  color: #444;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 28px;
+}
+
+.industry-service-icon {
+  margin-top: 45px;
+
+  color: #ff5a00;
+
+  font-size: 30px;
+}
+
+.industry-service-card h3 {
+  margin-top: 25px;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 31px;
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: 1px;
+}
+
+.industry-service-card p {
+  max-width: 480px;
+
+  margin-top: 18px;
+
+  color: #777;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.industry-service-line {
+  width: 45px;
+
+  height: 1px;
+
+  margin-top: 25px;
+
+  background: #ff5a00;
+}
+
+.industry-service-card > span {
+  display: block;
+
+  margin-top: 15px;
+
+  color: #555;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.industry-process {
+  padding: 130px 7%;
+
+  background: #090909;
+}
+
+.industry-process-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 50px;
+
+  margin-top: 25px;
+}
+
+.industry-process-heading h2 {
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: clamp(65px, 7vw, 105px);
+
+  line-height: 0.8;
+
+  font-weight: 500;
+}
+
+.industry-process-heading h2 span {
+  color: #ff5a00;
+}
+
+.industry-process-heading p {
+  max-width: 430px;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.industry-process-list {
+  margin-top: 70px;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.industry-process-item {
+  min-height: 120px;
+
+  display: grid;
+
+  grid-template-columns: 80px 1fr 50px;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 0 25px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  transition: 0.35s ease;
+}
+
+.industry-process-item:hover {
+  padding-left: 40px;
+
+  background: #0d0d0d;
+}
+
+.industry-process-item > span {
+  color: #ff5a00;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+.industry-process-item h3 {
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 30px;
+
+  font-weight: 500;
+
+  letter-spacing: 1px;
+}
+
+.industry-process-item p {
+  margin-top: 5px;
+
+  color: #666;
+
+  font-size: 12px;
+}
+
+.industry-process-item b {
+  color: #ff5a00;
+
+  font-size: 20px;
+}
+
+/* =========================================================
+   TECHNICAL SPECIFICATIONS
+   ========================================================= */
+
+.industry-specs {
+  position: relative;
+
+  padding: 130px 7%;
+
+  background: #050505;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SPEC HEADER
+   ========================================================= */
+
+.industry-specs-header {
+  position: relative;
+
+  z-index: 2;
+}
+
+.industry-specs-heading {
+  margin-top: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  gap: 50px;
+}
+
+.industry-specs-heading h2 {
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: clamp(65px, 7vw, 105px);
+
+  line-height: 0.82;
+
+  font-weight: 500;
+
+  letter-spacing: -1px;
+}
+
+.industry-specs-heading h2 span {
+  color: #ff5a00;
+}
+
+.industry-specs-heading p {
+  max-width: 420px;
+
+  margin-bottom: 5px;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SPECIFICATION GRID
+   ========================================================= */
+
+.industry-specs-grid {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 70px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.industry-spec-item {
+  min-height: 145px;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-right: 1px solid rgba(255,255,255,0.1);
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  background: #080808;
+
+  transition: 0.35s ease;
+}
+
+.industry-spec-item:hover {
+  background: #0d0d0d;
+}
+
+.industry-spec-item span {
+  color: #555;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+.industry-spec-item strong {
+  color: #fff;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   SPEC DISCLAIMER
+   ========================================================= */
+
+.industry-spec-note {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 25px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  max-width: 850px;
+}
+
+.industry-spec-note > span {
+  color: #ff5a00;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.industry-spec-note p {
+  margin: 0;
+
+  color: #555;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   ESTIMATED PROTOTYPE COST
+   ========================================================= */
+
+.industry-cost {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 50px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1.2fr;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  border-left: 1px solid rgba(255,255,255,0.1);
+
+  background: #080808;
+}
+
+.industry-cost-item {
+  min-height: 115px;
+
+  padding: 25px 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-right: 1px solid rgba(255,255,255,0.1);
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  transition: 0.3s ease;
+}
+
+.industry-cost-item:hover {
+  background: #0d0d0d;
+}
+
+.industry-cost-item span {
+  color: #555;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+.industry-cost-item strong {
+  color: #fff;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 26px;
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+}
+
+.industry-cost-item:first-child strong {
+  color: #ff5a00;
+}
+
+
+/* =========================================================
+   COST NOTE
+   ========================================================= */
+
+.industry-cost-note {
+  min-height: 115px;
+
+  padding: 25px 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-right: 1px solid rgba(255,255,255,0.1);
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.industry-cost-note > span {
+  color: #555;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+.industry-cost-note p {
+  max-width: 350px;
+
+  margin: 0;
+
+  color: #666;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .industry-specs-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+  .industry-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .industry-cost {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .industry-cost-note {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .industry-specs {
+    padding: 90px 7%;
+  }
+
+  .industry-specs-heading h2 {
+    font-size: 65px;
+  }
+
+  .industry-specs-grid {
+    margin-top: 50px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .industry-spec-item {
+    min-height: 125px;
+
+    padding: 25px;
+  }
+
+  .industry-cost {
+    margin-top: 45px;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .industry-specs-heading h2 {
+    font-size: 58px;
+  }
+
+  .industry-spec-item strong {
+    font-size: 25px;
+  }
+
+  .industry-cost {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-cost-note {
+    grid-column: auto;
+  }
+
+  .industry-cost-item,
+  .industry-cost-note {
+    min-height: 100px;
+
+    padding: 22px 25px;
+  }
+
+}
+
+/* =========================================================
+   APPLICATIONS
+   ========================================================= */
+
+.industry-applications {
+  min-height: 700px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  background: #050505;
+}
+
+.industry-applications-image {
+  min-height: 700px;
+
+  overflow: hidden;
+}
+
+.industry-applications-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  filter: saturate(0.85);
+
+  transition: 0.7s ease;
+}
+
+.industry-applications:hover
+.industry-applications-image img {
+  transform: scale(1.03);
+
+  filter: saturate(1);
+}
+
+.industry-applications-content {
+  padding: 110px 8%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.industry-applications-content h2 {
+  margin-top: 25px;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: clamp(65px, 8vw, 115px);
+
+  line-height: 0.8;
+
+  font-weight: 500;
+}
+
+.industry-applications-content h2 span {
+  color: #ff5a00;
+}
+
+.industry-applications-content > p {
+  max-width: 480px;
+
+  margin-top: 30px;
+
+  color: #888;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.industry-application-list {
+  margin-top: 45px;
+
+  max-width: 560px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+.industry-application-list div {
+  padding: 18px 0;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.industry-application-list strong {
+  color: #ff5a00;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 20px;
+}
+
+.industry-application-list span {
+  color: #777;
+
+  font-size: 8px;
+
+  letter-spacing: 1.4px;
+}
+
+
+/* =========================================================
+   WHY DRONA
+   ========================================================= */
+
+.industry-why {
+  padding: 130px 7%;
+
+  background: #080808;
+
+  display: grid;
+
+  grid-template-columns: 35% 65%;
+
+  gap: 60px;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.industry-why h2 {
+  margin-top: 25px;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: clamp(70px, 8vw, 115px);
+
+  line-height: 0.8;
+
+  font-weight: 500;
+}
+
+.industry-why h2 span {
+  color: #ff5a00;
+}
+
+.industry-why-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+.industry-why-grid > div {
+  padding: 35px;
+
+  border-left: 1px solid rgba(255,255,255,0.1);
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  transition: 0.3s ease;
+}
+
+.industry-why-grid > div:hover {
+  background: #0d0d0d;
+}
+
+.industry-why-grid strong {
+  color: #ff5a00;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 22px;
+}
+
+.industry-why-grid h3 {
+  margin-top: 30px;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 25px;
+
+  letter-spacing: 1px;
+}
+
+.industry-why-grid p {
+  margin-top: 15px;
+
+  color: #777;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.industry-cta {
+  min-height: 600px;
+
+  padding: 120px 7%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  background:
+    radial-gradient(
+      circle at 70% 50%,
+      rgba(255,90,0,0.12),
+      transparent 35%
+    ),
+    #080808;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.industry-cta-label {
+  color: #ff5a00;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+.industry-cta h2 {
+  margin-top: 25px;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: clamp(70px, 9vw, 135px);
+
+  line-height: 0.8;
+
+  font-weight: 500;
+}
+
+.industry-cta h2 span {
+  color: #ff5a00;
+}
+
+.industry-cta p {
+  margin-top: 30px;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+.industry-cta-button {
+  margin-top: 35px;
+
+  padding: 16px 25px;
+
+  background: #ff5a00;
+
+  color: #fff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  transition: 0.3s ease;
+}
+
+.industry-cta-button:hover {
+  background: #fff;
+
+  color: #000;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.industry-footer {
+  padding: 60px 7% 25px;
+
+  background: #030303;
+}
+
+.industry-footer-top {
+  padding-bottom: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.industry-footer-logo {
+  width: 120px;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+.industry-footer-top p {
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.industry-footer-bottom {
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+.industry-footer-bottom div {
+  display: flex;
+
+  gap: 25px;
+}
+
+.industry-footer-bottom a {
+  transition: 0.3s ease;
+}
+
+.industry-footer-bottom a:hover {
+  color: #ff5a00;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .industry-nav-links {
+    gap: 18px;
+  }
+
+  .industry-nav-button {
+    display: none;
+  }
+
+  .industry-hero-content {
+    width: 70%;
+  }
+
+  .industry-intro-grid {
+    gap: 50px;
+  }
+
+  .industry-why {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .industry-nav-container {
+    height: 70px;
+
+    padding: 0 25px;
+  }
+
+  .industry-logo {
+    width: 105px;
+  }
+
+  .industry-nav-links {
+    display: none;
+  }
+
+  .industry-hero {
+    min-height: 850px;
+
+    align-items: flex-start;
+  }
+
+  .industry-hero-content {
+    width: 90%;
+
+    margin-left: 7%;
+
+    padding-top: 180px;
+  }
+
+  .industry-hero h1 {
+    font-size: 75px;
+  }
+
+  .industry-hero-info {
+    left: 7%;
+
+    right: auto;
+
+    bottom: 45px;
+  }
+
+  .industry-scroll {
+    display: none;
+  }
+
+  .industry-intro,
+  .industry-services,
+  .industry-process {
+    padding: 90px 7%;
+  }
+
+  .industry-intro-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    margin-top: 50px;
+  }
+
+  .industry-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-process-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+  .industry-process-list {
+    margin-top: 50px;
+  }
+
+  .industry-applications {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-applications-image {
+    min-height: 500px;
+  }
+
+  .industry-applications-content {
+    min-height: 600px;
+
+    padding: 90px 7%;
+  }
+
+  .industry-why {
+    padding: 90px 7%;
+  }
+
+  .industry-cta {
+    min-height: 500px;
+
+    padding: 90px 7%;
+  }
+
+  .industry-footer-top {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+  .industry-footer-bottom {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .industry-hero {
+    min-height: 800px;
+  }
+
+  .industry-hero-content {
+    padding-top: 145px;
+  }
+
+  .industry-hero h1 {
+    font-size: 58px;
+
+    letter-spacing: -1px;
+  }
+
+  .industry-hero-content > p {
+    font-size: 13px;
+  }
+
+  .industry-hero-buttons {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .industry-hero-info {
+    gap: 18px;
+  }
+
+  .industry-hero-info span {
+    font-size: 7px;
+  }
+
+  .industry-intro h2 {
+    font-size: 65px;
+  }
+
+  .industry-large-text {
+    font-size: 29px !important;
+  }
+
+  .industry-section-heading h2 {
+    font-size: 58px;
+  }
+
+  .industry-service-card {
+    min-height: 300px;
+
+    padding: 28px;
+  }
+
+  .industry-service-card h3 {
+    font-size: 27px;
+  }
+
+  .industry-process-item {
+    grid-template-columns: 45px 1fr 25px;
+
+    padding: 0 10px;
+  }
+
+  .industry-process-item h3 {
+    font-size: 25px;
+  }
+
+  .industry-process-item p {
+    font-size: 11px;
+  }
+
+  .industry-application-list {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-why-grid > div {
+    padding: 25px;
+  }
+
+  .industry-why h2 {
+    font-size: 70px;
+  }
+
+  .industry-cta h2 {
+    font-size: 65px;
+  }
+
+}
