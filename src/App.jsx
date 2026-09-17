@@ -626,7 +626,7 @@ window.location.hash = "/photography";  }}
       <div className="why-drone-glow"></div>
 
       <img
-       src={`${import.meta.env.BASE_URL}images/3d%20printed%20drone.png`}
+      src={`${import.meta.env.BASE_URL}images/drone3d.png`}
         alt="DRONA 3D Printed Drone"
       />
 
