@@ -1,6 +1,8 @@
 import React from "react";
 import "./Industry.css";
 
+const BASE = import.meta.env.BASE_URL;
+
 function Industry() {
   return (
     <div className="industry-page">
@@ -12,20 +14,25 @@ function Industry() {
       <nav className="industry-navbar">
         <div className="industry-nav-container">
 
-          <a href="/" className="industry-logo-link">
+          <a href={BASE} className="industry-logo-link">
             <img
-              src="/images/drone%20logo.png"
+              src={`${BASE}images/drone%20logo.png`}
               alt="DRONA"
               className="industry-logo"
             />
           </a>
 
           <div className="industry-nav-links">
-            <a href="/">Home</a>
-            <a href="/agriculture">Agriculture</a>
-            <a href="/industry" className="active">
+            <a href={BASE}>Home</a>
+
+            <a href={`${BASE}#/agriculture`}>
+              Agriculture
+            </a>
+
+            <a href={`${BASE}#/industry`} className="active">
               Industry
             </a>
+
             <a href="#services">Services</a>
             <a href="#process">How It Works</a>
             <a href="#contact">Contact</a>
@@ -46,7 +53,7 @@ function Industry() {
       <section className="industry-hero">
 
         <img
-          src="/images/inspection%20drone2.png"
+          src={`${BASE}images/inspection%20drone2.png`}
           alt="Industrial drone inspection"
           className="industry-hero-image"
         />
@@ -77,17 +84,11 @@ function Industry() {
 
           <div className="industry-hero-buttons">
 
-            <a
-              href="#services"
-              className="industry-primary-btn"
-            >
+            <a href="#services" className="industry-primary-btn">
               EXPLORE SERVICES
             </a>
 
-            <a
-              href="#contact"
-              className="industry-secondary-btn"
-            >
+            <a href="#contact" className="industry-secondary-btn">
               CONTACT DRONA
             </a>
 
@@ -167,10 +168,7 @@ function Industry() {
           SERVICES
           ========================= */}
 
-      <section
-        className="industry-services"
-        id="services"
-      >
+      <section className="industry-services" id="services">
 
         <div className="industry-section-heading">
 
@@ -193,18 +191,11 @@ function Industry() {
 
         <div className="industry-service-grid">
 
-
-          {/* 01 */}
-
           <div className="industry-service-card">
 
-            <div className="industry-service-number">
-              01
-            </div>
+            <div className="industry-service-number">01</div>
 
-            <div className="industry-service-icon">
-              ◈
-            </div>
+            <div className="industry-service-icon">◈</div>
 
             <h3>
               INFRASTRUCTURE
@@ -227,17 +218,11 @@ function Industry() {
           </div>
 
 
-          {/* 02 */}
-
           <div className="industry-service-card">
 
-            <div className="industry-service-number">
-              02
-            </div>
+            <div className="industry-service-number">02</div>
 
-            <div className="industry-service-icon">
-              ◎
-            </div>
+            <div className="industry-service-icon">◎</div>
 
             <h3>
               THERMAL &
@@ -260,17 +245,11 @@ function Industry() {
           </div>
 
 
-          {/* 03 */}
-
           <div className="industry-service-card">
 
-            <div className="industry-service-number">
-              03
-            </div>
+            <div className="industry-service-number">03</div>
 
-            <div className="industry-service-icon">
-              ⌖
-            </div>
+            <div className="industry-service-icon">⌖</div>
 
             <h3>
               INDUSTRIAL
@@ -293,17 +272,11 @@ function Industry() {
           </div>
 
 
-          {/* 04 */}
-
           <div className="industry-service-card">
 
-            <div className="industry-service-number">
-              04
-            </div>
+            <div className="industry-service-number">04</div>
 
-            <div className="industry-service-icon">
-              ◇
-            </div>
+            <div className="industry-service-icon">◇</div>
 
             <h3>
               SITE &
@@ -334,10 +307,7 @@ function Industry() {
           PROCESS
           ========================= */}
 
-      <section
-        className="industry-process"
-        id="process"
-      >
+      <section className="industry-process" id="process">
 
         <div className="industry-section-label">
           INDUSTRY / 03
@@ -363,12 +333,10 @@ function Industry() {
         <div className="industry-process-list">
 
           <div className="industry-process-item">
-
             <span>01</span>
 
             <div>
               <h3>PLAN</h3>
-
               <p>
                 Understand the asset, site conditions
                 and inspection requirements.
@@ -376,17 +344,14 @@ function Industry() {
             </div>
 
             <b>→</b>
-
           </div>
 
 
           <div className="industry-process-item">
-
             <span>02</span>
 
             <div>
               <h3>FLY</h3>
-
               <p>
                 Execute the planned drone mission
                 around the inspection area.
@@ -394,17 +359,14 @@ function Industry() {
             </div>
 
             <b>→</b>
-
           </div>
 
 
           <div className="industry-process-item">
-
             <span>03</span>
 
             <div>
               <h3>CAPTURE</h3>
-
               <p>
                 Collect high-quality aerial imagery
                 and inspection data.
@@ -412,17 +374,14 @@ function Industry() {
             </div>
 
             <b>→</b>
-
           </div>
 
 
           <div className="industry-process-item">
-
             <span>04</span>
 
             <div>
               <h3>REPORT</h3>
-
               <p>
                 Organize findings into useful visual
                 information for inspection and maintenance.
@@ -430,10 +389,10 @@ function Industry() {
             </div>
 
             <b>→</b>
-
           </div>
 
         </div>
+
       </section>
 
 
@@ -465,8 +424,6 @@ function Industry() {
 
         </div>
 
-
-        {/* SPECIFICATION GRID */}
 
         <div className="industry-specs-grid">
 
@@ -563,8 +520,6 @@ function Industry() {
         </div>
 
 
-        {/* DISCLAIMER */}
-
         <div className="industry-spec-note">
 
           <span>*</span>
@@ -579,37 +534,25 @@ function Industry() {
         </div>
 
 
-        {/* ESTIMATED PROTOTYPE COST */}
-
         <div className="industry-cost">
 
           <div className="industry-cost-item">
-
             <span>ESTIMATED PROTOTYPE COST</span>
-
             <strong>₹9,000</strong>
-
           </div>
-
 
           <div className="industry-cost-item">
-
             <span>PLATFORM</span>
-
             <strong>DRONA INSPECT</strong>
-
           </div>
 
-
           <div className="industry-cost-note">
-
             <span>NOTE</span>
 
             <p>
               Final cost may vary depending on components,
               payload and configuration.
             </p>
-
           </div>
 
         </div>
@@ -626,7 +569,7 @@ function Industry() {
         <div className="industry-applications-image">
 
           <img
-            src="/images/inspection%20drone2.png"
+            src={`${BASE}images/inspection%20drone2.png`}
             alt="Drone inspecting industrial facility"
           />
 
@@ -761,10 +704,7 @@ function Industry() {
           CTA
           ========================= */}
 
-      <section
-        className="industry-cta"
-        id="contact"
-      >
+      <section className="industry-cta" id="contact">
 
         <div className="industry-cta-label">
           DRONA // INDUSTRIAL INSPECTION
@@ -781,10 +721,7 @@ function Industry() {
           inspection project.
         </p>
 
-        <a
-          href="/"
-          className="industry-cta-button"
-        >
+        <a href="#contact" className="industry-cta-button">
           TALK TO DRONA
         </a>
 
@@ -800,7 +737,7 @@ function Industry() {
         <div className="industry-footer-top">
 
           <img
-            src="/images/drone%20logo.png"
+            src={`${BASE}images/drone%20logo.png`}
             alt="DRONA"
             className="industry-footer-logo"
           />
@@ -819,7 +756,7 @@ function Industry() {
           </span>
 
           <div>
-            <a href="/">HOME</a>
+            <a href={BASE}>HOME</a>
             <a href="#services">SERVICES</a>
             <a href="#contact">CONTACT</a>
           </div>
